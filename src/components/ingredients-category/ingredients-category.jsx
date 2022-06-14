@@ -10,8 +10,8 @@ export const IngredientsCategory = forwardRef(({ title, ingredients, id }, ref) 
         {title}
       </h2>
       <div className={styles.optionscards}>
-        {ingredients.map((el, ind) => (
-          <BurgerIngredient key={ind} {...el} />
+        {ingredients.map((el, _id) => (
+          <BurgerIngredient key={_id} {...el} />
         ))}
       </div>
     </>
@@ -21,4 +21,5 @@ export const IngredientsCategory = forwardRef(({ title, ingredients, id }, ref) 
 IngredientsCategory.propTypes = {
   title: PropTypes.string.isRequired,
   ingredients: PropTypes.array.isRequired,
+  id: PropTypes.string.isRequired, //
 };

@@ -1,11 +1,8 @@
 import React from "react";
-import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
-import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
+import { CurrencyIcon, Button, ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
 import OrderDetails from "../order-details/order-details";
 import styles from "./burger-constructor.module.css";
 import { ArrayPropTypes } from "../../utils/proptypes";
-import bunimg from "../../images/bun-02.svg";
 import Modal from "../modal/modal";
 
 export default function BurgerConstructor({ data }) {
@@ -35,7 +32,7 @@ export default function BurgerConstructor({ data }) {
           isLocked={true}
           text={bunName + " (верх)"}
           price={data[0].price}
-          thumbnail={bunimg}
+          thumbnail={data[0].image}
         />
         <ul className={styles.componentlist}>
           {ingredients.map((item, index) => (
@@ -53,8 +50,8 @@ export default function BurgerConstructor({ data }) {
           type="bottom"
           isLocked={true}
           text={bunName + " (низ)"}
-          price={data[data.length - 1].price}
-          thumbnail={bunimg}
+          price={data[0].price}
+          thumbnail={data[0].image}
         />
         <div className={styles.total}>
           <div className={styles.text}>
